@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Рандомный выбор победителей</title>
-    <script src="https://unpkg.com/@vkontakte/vk-bridge@2.12.0/dist/vk-bridge.min.js"></script>
-</head>
-<body>
-    <h1>✅ Приложение работает!</h1>
-
-    <script>
-        // Инициализация через официальный VK Bridge
-        VK.init(() => {
-            console.log('VK Bridge инициализирован');
-        });
-
-        // Обязательная инициализация
-        VK.on('VKWebAppInit', () => {
-            VK.WebApp.sendResult();
-        });
-    </script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+    />
+    <title>VKUI App Boilerplate</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
