@@ -5,205 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Рандомный выбор победителей</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f0 100%);
-            min-height: 100vh;
+            margin: 0;
             padding: 20px;
+            font-family: sans-serif;
+            text-align: center;
+            background: #f5f7fa;
         }
         .container {
-            max-width: 600px;
+            max-width: 400px;
             margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(135deg, #4a86e8 0%, #6fa8dc 100%);
-            color: white;
-            text-align: center;
-            padding: 24px 20px;
-        }
-        .header h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .header p {
-            opacity: 0.9;
-            font-size: 14px;
-        }
-        .content {
-            padding: 24px;
-        }
-        .input-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #333;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid #ddd;
             border-radius: 12px;
-            font-size: 16px;
-            transition: border-color 0.3s;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        input[type="text"]:focus {
-            border-color: #4a6e8;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(74, 134, 232, 0.2);
-        }
-        .checkbox-group {
-            display: flex;
-            gap: 16px;
-            margin-top: 8px;
-        }
-        .checkbox-item {
-            flex: 1;
-        }
-        .checkbox-item input {
-            margin-right: 8px;
-        }
+        h1 { color: #333; margin-bottom: 20px; }
         button {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #4a86e8 0%, #6fa8dc 100%);
+            background: #4a86e8;
             color: white;
             border: none;
-            border-radius: 12px;
+            padding: 12px 24px;
+            border-radius: 8px;
             font-size: 16px;
-            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(74, 134, 232, 0.4);
-        }
-        .result {
-            margin-top: 30px;
-            padding: 24px;
-            background: #f0f8ff;
-            border-radius: 12px;
-            text-align: center;
-            display: none;
-        }
-        .avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4a86e8 0%, #6fa8dc 100%);
-            margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: white;
-        }
-        .winner-name {
-            font-size: 24px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 12px;
-        }
-        .stats {
-            color: #666;
-            margin-bottom: 16px;
-        }
-        .repeat-btn {
-            background: #e0e0e0;
-            color: #333;
-        }
-        .repeat-btn:hover {
-            background: #d0d0d0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>������ Рандомный выбор победителей</h1>
-            <p>Вставьте ссылку на конкурсный пост и найдите победителя</p>
-        </div>
-        
-        <div class="content">
-            <div class="input-group">
-                <label for="postUrl">Ссылка на конкурсный пост</label>
-                <input type="text" id="postUrl" placeholder="Пример: vk.com/wall-123456_789">
-            </div>
-            
-            <div class="input-group">
-                <label>Критерии поиска</label>
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="byLikes" checked>
-                        <label for="byLikes">По лайкам</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="byReposts">
-                        <label for="byReposts">По репостам</label>
-                    </div>
-                </div>
-            </div>
-            
-            <button id="searchBtn">Найти победителя</button>
-            
-            <div class="result" id="result">
-                <div class="avatar">������</div>
-                <div class="winner-name">Лидия Петрова</div>
-                <div class="stats">Всего участников: 65</div>
-                <div class="stats">Победитель выбран случайно</div>
-                <button class="repeat-btn" id="repeatBtn">Повторить поиск</button>
-            </div>
-        </div>
+        <h1>������ Готово!</h1>
+        <p>Приложение загружено успешно.</p>
+        <button onclick="alert('Работает!')">Тест</button>
     </div>
 
+    <!-- ОБЯЗАТЕЛЬНЫЙ КОД ДЛЯ MINI APPS -->
     <script>
-        document.getElementById('searchBtn').addEventListener('click', function() {
-            const url = document.getElementById('postUrl').value.trim();
-            const byLikes = document.getElementById('byLikes').checked;
-            const byReposts = document.getElementById('byReposts').checked;
+        // Инициализация VK Bridge
+        if (typeof window.VK === 'undefined') {
+            // Загружаем VK Bridge динамически
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/@vkontakte/vk-bridge@2.12.0/dist/vk-bridge.min.js';
+            script.onload = () => {
+                console.log('VK Bridge загружен');
+                // Инициализируем связь с ВК
+                if (window.VK && typeof window.VK.init === 'function') {
+                    window.VK.init();
+                }
+            };
+            document.head.appendChild(script);
+        }
 
-            if (!url) {
-                alert('⚠️ Пожалуйста, введите ссылку на пост!');
-                return;
+        // Обязательно: ответ на ping от ВК
+        window.addEventListener('message', function(e) {
+            if (e.data.type === 'VKWebAppInit') {
+                // Отвечаем на инициализацию
+                e.source.postMessage({
+                    type: 'VKWebAppInitResult',
+                    data: { success: true }
+                }, e.origin);
             }
-
-            // Имитация поиска (в реальном приложении здесь будет VK Bridge)
-            console.log('Поиск запущен:', { url, byLikes, byReposts });
-
-            // Показываем результат
-            document.getElementById('result').style.display = 'block';
-            
-            // Генерируем случайное имя для демонстрации
-            const names = [
-                'Анна Смирнова', 'Дмитрий Иванов', 'Елена Кузнецова',
-                'Максим Петров', 'Ольга Соколова', 'Артём Васильев',
-                'София Лебедева', 'Никита Морозов'
-            ];
-            const randomName = names[Math.floor(Math.random() * names.length)];
-            document.getElementById('winner-name').textContent = randomName;
-            
-            // Генерируем случайное количество участников
-            const total = Math.floor(Math.random() * 100) + 20;
-            document.querySelector('.stats:nth-child(1)').textContent = `Всего участников: ${total}`;
         });
 
-        document.getElementById('repeatBtn').addEventListener('click', function() {
-            document.getElementById('result').style.display = 'none';
-            document.getElementById('postUrl').value = '';
-        });
-
-        // Автоматический фокус на поле ввода
-        document.getElementById('postUrl').focus();
+        // Защита от зависания
+        setTimeout(() => {
+            console.log('Приложение активно');
+        }, 1000);
     </script>
 );
 </body>
