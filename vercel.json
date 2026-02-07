@@ -3,9 +3,18 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "https://vk.com" },
-        { "key": "X-Frame-Options", "value": "ALLOW-FROM https://vk.com" },
-        { "key": "Content-Security-Policy", "value": "frame-ancestors 'self' https://vk.com;" }
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "https://vk.com"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "ALLOW-FROM https://vk.com"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self' https://vk.com;"
+        }
       ]
     }
   ]
