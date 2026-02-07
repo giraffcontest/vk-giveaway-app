@@ -1,0 +1,11 @@
+{
+  "name": "vk-giveaway-app",
+  "version": "1.0.0",
+  "description": "Простое приложение для рандомного выбора победителей",
+  "scripts": {
+    "start:local": "npx serve"
+  },
+  "devDependencies": {
+    "serve": "^14.2.0"
+  }
+}
