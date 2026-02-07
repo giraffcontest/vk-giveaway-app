@@ -1,77 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рандомный выбор победителей</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: sans-serif;
-            text-align: center;
-            background: #f5f7fa;
-        }
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-        h1 { color: #333; margin-bottom: 20px; }
-        button {
-            background: #4a86e8;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
-</head>
+<html>
 <body>
-    <div class="container">
-        <h1>������ Готово!</h1>
-        <p>Приложение загружено успешно.</p>
-        <button onclick="alert('Работает!')">Тест</button>
-    </div>
-
-    <!-- ОБЯЗАТЕЛЬНЫЙ КОД ДЛЯ MINI APPS -->
-    <script>
-        // Инициализация VK Bridge
-        if (typeof window.VK === 'undefined') {
-            // Загружаем VK Bridge динамически
-            const script = document.createElement('script');
-            script.src = 'https://unpkg.com/@vkontakte/vk-bridge@2.12.0/dist/vk-bridge.min.js';
-            script.onload = () => {
-                console.log('VK Bridge загружен');
-                // Инициализируем связь с ВК
-                if (window.VK && typeof window.VK.init === 'function') {
-                    window.VK.init();
-                }
-            };
-            document.head.appendChild(script);
-        }
-
-        // Обязательно: ответ на ping от ВК
-        window.addEventListener('message', function(e) {
-            if (e.data.type === 'VKWebAppInit') {
-                // Отвечаем на инициализацию
-                e.source.postMessage({
-                    type: 'VKWebAppInitResult',
-                    data: { success: true }
-                }, e.origin);
-            }
-        });
-
-        // Защита от зависания
-        setTimeout(() => {
-            console.log('Приложение активно');
-        }, 1000);
-    </script>
-);
+<script>
+parent.postMessage({type:'VKWebAppInitResult',data:{success:true}},'*')
+</script>
+<h1>РАБОТАЕТ</h1>
 </body>
 </html>
